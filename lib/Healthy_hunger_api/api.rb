@@ -27,7 +27,7 @@ module HealthyHungerApi
 
         request = Net::HTTP::Get.new(url) #calling the Net::HTTP get method and passing the url to that method
         request["x-rapidapi-host"] = 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
-        request["x-rapidapi-key"] = '3b2d9ac93amsh2ec6673c95ce5f3p174558jsna4a871c38f77'
+        request["x-rapidapi-key"] 
 
         response = http.request(request)
         JSON.parse(response.read_body) if response.is_a?(Net::HTTPSuccess) #parsing through the return value of the response.body as long as the get request is successful
