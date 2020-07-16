@@ -6,17 +6,7 @@ TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'Healthy_hunger_api'
-```
-
-And then execute:
-
-    $ bundle install
-
-Or install it yourself as:
+    
 
     $ gem install Healthy_hunger_api
 
