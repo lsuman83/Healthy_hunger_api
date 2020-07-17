@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["sean.j.bordelon@gmail.com"]
 
   spec.summary       = %q{Displays a List of created meals from Recipe-Food-Nutrition API}
-  spec.description   = %q{CLI program for getting a List of created meals abd providing a recipe from Recipe-Food-Nutrition API}
+  spec.description   = %q{CLI program for getting a List of created meals and providing a summary from Recipe-Food-Nutrition API}
   spec.homepage      = "https://github.com/lsuman83/Healthy_hunger_api"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
