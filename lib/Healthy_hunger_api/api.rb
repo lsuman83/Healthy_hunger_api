@@ -45,7 +45,6 @@ module HealthyHungerApi
 <<<<<<< HEAD
         request["x-rapidapi-key"] = api_key
 =======
-        request["x-rapidapi-key"] 
 >>>>>>> c8c477959c98ebcc60603d6131acf7031388f6b3
 
         response = http.request(request)
