@@ -8,7 +8,9 @@ module HealthyHungerApi
 
     class API #class that is accessing the api from the url
 
-      def self.api_key
+      def self.api_key #class method used to help hide the api key by reading it from a
+                      #file accessed on the user's computer or allowing the user to input it
+
         begin 
           @key = File.open(File.expand_path("~/.spoonacular-api-key")).read.strip
         rescue
@@ -20,7 +22,9 @@ module HealthyHungerApi
             file.print @key
           end
         end
+
         @key
+
       end
 
       def self.get_meals (timeFrame, targetCalories, diet, exclude) #class method that is accepting input parameters to get specific info from url   

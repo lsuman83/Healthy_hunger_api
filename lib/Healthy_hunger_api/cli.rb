@@ -74,7 +74,7 @@ module HealthyHungerApi
                 @input = gets.strip
                 
                 puts ""
-                
+
                 if @input == '1'#conditional used to set the return value of the method based on the user input so that the method returns
                     @menu_input = "day"# the proper string to pass to the api call
                 elsif @input == '2'
@@ -94,7 +94,7 @@ module HealthyHungerApi
 
             puts ""
 
-            if @meal_cal.to_i == 0
+            if @meal_cal.to_i == 0 #checking to make sure the user doesn't accidentally input a string
                 puts "Please enter a number"
                 puts ""
                 meal_calories
@@ -155,7 +155,9 @@ module HealthyHungerApi
            
         end
 
-        def list_meals_by_day #
+        def list_meals_by_day #instance method that searches through all of the meal objects that have been 
+                #created for a daily meal plan, iterates over the objects and prints out the name of the meal with its
+                #index number next to it
 
             Meals.all.each.with_index(1) do |meal, index|
                 puts "Meal ##{index}: #{meal.title}"
@@ -163,7 +165,9 @@ module HealthyHungerApi
 
         end
         
-        def list_meals_by_week
+        def list_meals_by_week #instance method that searches through all of the meal objects that have been 
+            #created for a weekly meal plan, iterates over the objects and prints out the name of the meal with its
+            #index number next to it. It also prints the meal number and which day of the week it is refering to
 
             
             daily_index = 0
@@ -179,14 +183,16 @@ module HealthyHungerApi
         end
 
 
-        def ask_for_choice
+        def ask_for_choice #instance method that is asking the user to input the meal number in order to see
+            #which meal that the user wants a description of
 
             puts "Choose meal to see recipe"
             @input = gets.strip
 
         end
 
-        def valid?(input)
+        def valid?(input) #instance method that returns as truthy or falsey based on whether the input that 
+            #the user has chosen is a valid meal number in the list of meal objects
 
             Meals.all[input.to_i - 1] != nil
 
