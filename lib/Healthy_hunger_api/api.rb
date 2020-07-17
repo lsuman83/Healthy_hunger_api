@@ -12,11 +12,11 @@ module HealthyHungerApi
         begin 
           @key = File.open(File.expand_path("~/.spoonacular-api-key")).read.strip
         rescue
-          puts "Unable to locate your API key. Please go to rapidapit.com, search for the
+          puts "Unable to locate your API key. Please go to rapidapi.com, search for the
           recipe-food-nutrition api and subscribe to receive your api key. Then come back and
           input your key here."
           @key = gets.strip
-          File.open(File.expand_path("~/.spoonacular-api-key"), "W") do |file|
+          File.open(File.expand_path("~/.spoonacular-api-key"), "w") do |file|
             file.print @key
           end
         end
@@ -42,10 +42,8 @@ module HealthyHungerApi
 
         request = Net::HTTP::Get.new(url) #calling the Net::HTTP get method and passing the url to that method
         request["x-rapidapi-host"] = 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
-<<<<<<< HEAD
         request["x-rapidapi-key"] = api_key
-=======
->>>>>>> c8c477959c98ebcc60603d6131acf7031388f6b3
+
 
         response = http.request(request)
         JSON.parse(response.read_body) if response.is_a?(Net::HTTPSuccess) #parsing through the return value of the response.body as long as the get request is successful
@@ -63,7 +61,7 @@ module HealthyHungerApi
         
         request = Net::HTTP::Get.new(url)
         request["x-rapidapi-host"] = 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
-        request["x-rapidapi-key"] = 
+        request["x-rapidapi-key"] = api_key
         response = http.request(request)
         JSON.parse(response.read_body) if response.is_a?(Net::HTTPSuccess)
 

@@ -71,8 +71,10 @@ module HealthyHungerApi
                 puts "\t1 - Daily Meal Plan"
                 puts "\t2 - Weekly Meal Plan"
                 puts ""
-    
-                @input = gets.strip 
+                @input = gets.strip
+                
+                puts ""
+                
                 if @input == '1'#conditional used to set the return value of the method based on the user input so that the method returns
                     @menu_input = "day"# the proper string to pass to the api call
                 elsif @input == '2'
@@ -89,6 +91,9 @@ module HealthyHungerApi
                             #value is within the parameters given
             puts "What is your target Calorie intake? (400 - 3200)"
             @meal_cal = gets.strip
+
+            puts ""
+
             if @meal_cal.to_i == 0
                 puts "Please enter a number"
                 puts ""
@@ -110,8 +115,10 @@ module HealthyHungerApi
             puts "  3. Paleo"
             puts "  4. Keto"
             puts "  5. None"   
-    
             @input = gets.strip 
+
+            puts ""
+
             if @input == "1" #conditionals setting the return values of the method equal to the string that the input
                 @diet_input = "vegetarian"#from the user refers to
             elsif @input == '2'
