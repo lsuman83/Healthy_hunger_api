@@ -159,6 +159,7 @@ module HealthyHungerApi
                 #created for a daily meal plan, iterates over the objects and prints out the name of the meal with its
                 #index number next to it
 
+            puts "" 
             Meals.all.each.with_index(1) do |meal, index|
                 puts "Meal ##{index}: #{meal.title}"
             end
@@ -169,7 +170,7 @@ module HealthyHungerApi
             #created for a weekly meal plan, iterates over the objects and prints out the name of the meal with its
             #index number next to it. It also prints the meal number and which day of the week it is refering to
 
-            
+            puts ""
             daily_index = 0
             Meals.all.each.with_index(1) do |meal, index|
                 meal_name = JSON.parse(meal.value)
@@ -186,7 +187,8 @@ module HealthyHungerApi
         def ask_for_choice #instance method that is asking the user to input the meal number in order to see
             #which meal that the user wants a description of
 
-            puts "Choose meal to see recipe"
+            puts ""
+            puts "Choose a meal number to see a description"
             @input = gets.strip
 
         end
