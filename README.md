@@ -19,7 +19,11 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
+<<<<<<< HEAD
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/Healthy_hunger_api. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/Healthy_hunger_api/blob/master/CODE_OF_CONDUCT.md).
+=======
 Bug reports and pull requests are welcome on GitHub at https://github.com/lsuman83/Healthy_hunger_api. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/lsuman83/Healthy_hunger_api/blob/master/CODE_OF_CONDUCT.md).
+>>>>>>> fb9e34adcc5e25b3acab3cf63ba24a0de499c96f
 
 
 ## License
@@ -28,4 +32,8 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
+<<<<<<< HEAD
+Everyone interacting in the HealthyHungerApi project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/Healthy_hunger_api/blob/master/CODE_OF_CONDUCT.md).
+=======
 Everyone interacting in the HealthyHungerApi project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/lsuman83/Healthy_hunger_api/blob/master/CODE_OF_CONDUCT.md).
+>>>>>>> fb9e34adcc5e25b3acab3cf63ba24a0de499c96f
