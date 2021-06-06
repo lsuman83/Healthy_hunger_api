@@ -1,28 +1,15 @@
 # HealthyHungerApi
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/Healthy_hunger_api`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to my ruby gem HealthyHungerApi! It is designed to help those in need of finding some healthy meal options while creating a plan that the user can visualize. My gem takes in input based on whether the user wants a daily or weekly meal plan setup and also takes in certain parameters to help create a more specific plan such as desired caloric intake, diet (i.e. vegan, keto, etc..), and any allergies the user may have. After the user has input the optional parameters, my gem creates and outputs a daily or weekly meal plan based on the specifics entered. The meals that are found and used to create a meal plan and the summary that accompanies each meal are accessed through an outside API. All information that is used to produce the neal plans come from the spoonacular API called recipe-food-nutrition located at rapidapi.com. (https://rapidapi.com/spoonacular/api/recipe-food-nutrition)
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'Healthy_hunger_api'
-```
-
-And then execute:
-
-    $ bundle install
-
-Or install it yourself as:
-
     $ gem install Healthy_hunger_api
 
-## Usage
+    Healthy_hunger_api
 
-TODO: Write usage instructions here
+   In order to run the gem type in '$ gem install Healthy_hunger_api', and then type in 'Healthy_hunger_api' to begin the cli application
+
 
 ## Development
 
@@ -32,7 +19,11 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
+<<<<<<< HEAD
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/Healthy_hunger_api. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/Healthy_hunger_api/blob/master/CODE_OF_CONDUCT.md).
+=======
+Bug reports and pull requests are welcome on GitHub at https://github.com/lsuman83/Healthy_hunger_api. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/lsuman83/Healthy_hunger_api/blob/master/CODE_OF_CONDUCT.md).
+>>>>>>> fb9e34adcc5e25b3acab3cf63ba24a0de499c96f
 
 
 ## License
@@ -41,4 +32,8 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
+<<<<<<< HEAD
 Everyone interacting in the HealthyHungerApi project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/Healthy_hunger_api/blob/master/CODE_OF_CONDUCT.md).
+=======
+Everyone interacting in the HealthyHungerApi project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/lsuman83/Healthy_hunger_api/blob/master/CODE_OF_CONDUCT.md).
+>>>>>>> fb9e34adcc5e25b3acab3cf63ba24a0de499c96f
