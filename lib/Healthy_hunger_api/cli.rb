@@ -10,7 +10,10 @@ module HealthyHungerApi
 
         def start #instance method that starts the program and calls other instance methods used to access info for the app
 
-            puts "\tWelcome to our Healthy Hunger CLI app!"
+            puts "What is your name?"
+            @input = gets.strip
+            puts ""
+            puts "\tWelcome to our Healthy Hunger CLI app, #{@input}!"
             puts ""
             puts "We are here to help you create a healthy meal plan for yourself. Let's get started!"
             puts ""
@@ -32,9 +35,9 @@ module HealthyHungerApi
             while @input != 'exit' #conditionals based on the validity of the choice returned by the ask_for_choice method
                 if valid?(@input)
                     if @menu_input == 'day'
-                        Meals.find_by_number(@input).display_meals_by_day #calls the instance method that displays the meals by using the class method 
+                        Meals.find_by_number(@input).meals_by_day #calls the instance method that displays the meals by using the class method 
                     elsif @menu_input == 'week'                             #that is used to find the number that references the particular meal from the Meal class
-                        Meals.find_by_number(@input).display_meals_by_week
+                        Meals.find_by_number(@input).meals_by_week
                     end
 
                     puts ""
@@ -159,7 +162,10 @@ module HealthyHungerApi
                 #created for a daily meal plan, iterates over the objects and prints out the name of the meal with its
                 #index number next to it
 
-            puts "" 
+            puts ""
+            puts "Here are your meals for the day:"
+            puts ""
+
             Meals.all.each.with_index(1) do |meal, index|
                 puts "Meal ##{index}: #{meal.title}"
             end
@@ -171,7 +177,11 @@ module HealthyHungerApi
             #index number next to it. It also prints the meal number and which day of the week it is refering to
 
             puts ""
+            puts "Here are your meals for the week:"
+            puts ""
+
             daily_index = 0
+
             Meals.all.each.with_index(1) do |meal, index|
                 meal_name = JSON.parse(meal.value)
                 if daily_index % 3 == 0

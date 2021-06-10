@@ -23,15 +23,7 @@ Gem::Specification.new do |spec|
   spec.files         = Dir.chdir(File.expand_path('..', __FILE__)) do
     `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   end
-<<<<<<< HEAD
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
-=======
-  #spec.bindir        = "exe"
-  spec.executables   = ["Healthy_hunger_api"]
-  spec.require_paths = ["lib"]
-
-  spec.add_development_dependency "rake", "~> 12.3.3"
->>>>>>> fb9e34adcc5e25b3acab3cf63ba24a0de499c96f
 end
