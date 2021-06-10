@@ -38,8 +38,8 @@ module HealthyHungerApi
 
         end
 
-        attr_accessor :id, :title, :readyInMinutes, :servings, :sumnary, :day, :slot, :value #creates getter and setter methods for each
-                                                                                             #hash key received from the api meal hash               
+        attr_accessor  :id, :title, :readyInMinutes, :servings, :sumnary, :day, :slot, :value #creates getter and setter methods for each
+                                                                                     #hash key received from the api meal hash               
 
         def initialize(attributes = {}) #initializes new instances of each meal
             attributes.each do |attribute_name, attribute_value| #iterates over each has assigning each key as an attribute name
@@ -54,10 +54,12 @@ module HealthyHungerApi
         
        # def value_parser #instance method used to parse through the class method get_summary from the API classes 
                         #value key and grab the values that are within the "id" symbol
-        #    API.get_summary(JSON.parse(self.value)["id"])
+         #   API.get_summary(JSON.parse(self.value)["id"])
+           # Recipes.get_recipes(SON.parse(self.value)["id"]
 
         #end
 
+        
         def summaries #instance method that uses the id key from the return value of the class method
                             #get_summary of the API class to get the summary of each meal for a daily meal plan
             
@@ -67,16 +69,22 @@ module HealthyHungerApi
 
         #def weekly_summaries#instance method that calls the value_parser method to get the summary of each meal for a weekly meal plan
 
-            #    @summaries ||= value_parser
+         #       @summaries ||= value_parser
 
         #end
 
+       # def daily_recipes
+
+        #    @ = Recipes.get_recipes(self.id)
+
+        #end
 
         def meals_by_day #instance method that uses the "summary" string to access the value from that hash symbol
                                 #and replace each of the symbols found through the regex passed into the .gsub method 
                                 #with an empty space
 
             puts summaries["summary"].gsub(/<\/?[a-z]+>/, "").gsub(/<a href="[a-zA-Z0-9\/:\.\-\+]+">/, "")   
+            
 
         end
 
@@ -84,9 +92,9 @@ module HealthyHungerApi
             #and replace each of the symbols found through the regex passed into the .gsub method 
             #with an empty space
 
-      #      puts weekly_summaries["summary"].gsub(/<\/?[a-z]+>/, "").gsub(/<a href="[a-zA-Z0-9\/:\.\-\+]+">/, "")
+         #   puts weekly_summaries["summary"].gsub(/<\/?[a-z]+>/, "").gsub(/<a href="[a-zA-Z0-9\/:\.\-\+]+">/, "")
 
-      #  end
+        #end
 
     end
 
