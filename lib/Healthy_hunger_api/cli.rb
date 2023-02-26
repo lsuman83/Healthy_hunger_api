@@ -35,16 +35,16 @@ module HealthyHungerApi
             while @input != 'exit' #conditionals based on the validity of the choice returned by the ask_for_choice method
                 if valid?(@input)
                     #if @menu_input == 'day'
-                    Meals.find_by_number(@input).meals_summary #calls the instance method that displays the meals by using the class method 
+                    @meal_info = Meals.find_by_number(@input)
+                    @meal_info.meals_summary #calls the instance method that displays the meals by using the class method 
                     #elsif @menu_input == 'week' #that is used to find the number that references the particular meal from the Meal class
                       #  Meals.find_by_number(@input).display_meals_by_week
                     #end
-                    @meal_id = Meals.find_by_number(@input).get_meal_id
                     
                     set_recipes
-
+                    
                     puts ""
-                    Recipes.print_recipe
+                    print_recipe
                     
                     puts ""
                     puts "To see the description of another meal, type 'next'"
@@ -172,7 +172,16 @@ module HealthyHungerApi
 
         def set_recipes
 
+            @meal_id = @meal_info.get_meal_id
             Recipes.load_recipes(@meal_id)
+
+        end
+
+        def print_recipe
+
+            Recipes.recipe_ingredients
+            puts ""
+            Recipes.recipe_instructions
 
         end
 

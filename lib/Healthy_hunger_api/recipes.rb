@@ -35,10 +35,19 @@ module HealthyHungerApi
 
         end
 
-        def self.print_recipe
+        def self.recipe_instructions
 
             puts "Instructions:"
             puts @recipes["instructions"].gsub(/<\/?[a-z]+>/, "").gsub(/<a href="[a-zA-Z0-9\/:\.\-\+]+">/, "")
+
+        end
+
+        def self.recipe_ingredients
+
+            puts "Ingredients:"
+            @recipes["extendedIngredients"].each do | ingredient |
+                puts "#{ingredient["amount"]} - #{ingredient["unit"]} #{ingredient["name"]}".gsub(/<\/?[a-z]+>/, "").gsub(/<a href="[a-zA-Z0-9\/:\.\-\+]+">/, "")
+            end
 
         end
 

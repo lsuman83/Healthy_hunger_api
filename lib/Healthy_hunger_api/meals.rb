@@ -52,12 +52,7 @@ module HealthyHungerApi
         end
 
         
-       # def value_parser #instance method used to parse through the class method get_summary from the API classes 
-                        #value key and grab the values that are within the "id" symbol
-         #   API.get_summary(JSON.parse(self.value)["id"])
-           # Recipes.get_recipes(SON.parse(self.value)["id"]
-
-        #end
+      
 
         
         def summaries #instance method that uses the id key from the return value of the class method
@@ -67,17 +62,7 @@ module HealthyHungerApi
             
         end
 
-        #def weekly_summaries#instance method that calls the value_parser method to get the summary of each meal for a weekly meal plan
-
-         #       @summaries ||= value_parser
-
-        #end
-
-       # def daily_recipes
-
-        #    @ = Recipes.get_recipes(self.id)
-
-        #end
+       
 
         def get_meal_id
 
@@ -89,19 +74,13 @@ module HealthyHungerApi
                                 #and replace each of the symbols found through the regex passed into the .gsub method 
                                 #with an empty space
             puts ""
+            puts "Summary:"
             puts summaries["summary"].gsub(/<\/?[a-z]+>/, "").gsub(/<a href="[a-zA-Z0-9\/:\.\-\+]+">/, "")   
             
 
         end
 
-        #def display_meals_by_week#instance method that uses the "summary" string to access the value from that hash symbol
-            #and replace each of the symbols found through the regex passed into the .gsub method 
-            #with an empty space
-
-         #   puts weekly_summaries["summary"].gsub(/<\/?[a-z]+>/, "").gsub(/<a href="[a-zA-Z0-9\/:\.\-\+]+">/, "")
-
-        #end
-
+       
     end
 
 end
