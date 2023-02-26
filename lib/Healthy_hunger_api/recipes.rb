@@ -14,7 +14,7 @@ module HealthyHungerApi
 
             @recipes = API.get_recipes(id)["extendedIngredients"]
             @@all = self.create_new_recipe(@recipes)
-
+            binding.pry
         end
 
         def self.create_new_recipe(recipes)
