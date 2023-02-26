@@ -79,10 +79,16 @@ module HealthyHungerApi
 
         #end
 
-        def meals_by_day #instance method that uses the "summary" string to access the value from that hash symbol
+        def get_meal_id
+
+            self.id
+
+        end
+
+        def meals_summary #instance method that uses the "summary" string to access the value from that hash symbol
                                 #and replace each of the symbols found through the regex passed into the .gsub method 
                                 #with an empty space
-
+            puts ""
             puts summaries["summary"].gsub(/<\/?[a-z]+>/, "").gsub(/<a href="[a-zA-Z0-9\/:\.\-\+]+">/, "")   
             
 

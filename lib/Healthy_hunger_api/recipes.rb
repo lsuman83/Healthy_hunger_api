@@ -12,9 +12,9 @@ module HealthyHungerApi
 
         def self.load_recipes(id)
 
-            @recipes = API.get_recipes(id)["extendedIngredients"]
+            @recipes = API.get_recipes(id)
             @@all = self.create_new_recipe(@recipes)
-            binding.pry
+        
         end
 
         def self.create_new_recipe(recipes)
@@ -35,6 +35,12 @@ module HealthyHungerApi
 
         end
 
+        def self.print_recipe
+
+            puts "Instructions:"
+            puts @recipes["instructions"].gsub(/<\/?[a-z]+>/, "").gsub(/<a href="[a-zA-Z0-9\/:\.\-\+]+">/, "")
+
+        end
 
     end
 

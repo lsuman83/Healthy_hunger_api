@@ -5,7 +5,7 @@ module HealthyHungerApi
         def initialize 
 
             @input = "" #initializes all input instances to an empty string
-
+            @all = []
         end
 
         def start #instance method that starts the program and calls other instance methods used to access info for the app
@@ -35,17 +35,28 @@ module HealthyHungerApi
             while @input != 'exit' #conditionals based on the validity of the choice returned by the ask_for_choice method
                 if valid?(@input)
                     #if @menu_input == 'day'
-                        Meals.find_by_number(@input).meals_by_day #calls the instance method that displays the meals by using the class method 
+                    Meals.find_by_number(@input).meals_summary #calls the instance method that displays the meals by using the class method 
                     #elsif @menu_input == 'week' #that is used to find the number that references the particular meal from the Meal class
                       #  Meals.find_by_number(@input).display_meals_by_week
                     #end
+                    @meal_id = Meals.find_by_number(@input).get_meal_id
+                    
+                    set_recipes
 
+                    puts ""
+                    Recipes.print_recipe
+                    
                     puts ""
                     puts "To see the description of another meal, type 'next'"
                     puts "otherwise type 'exit' to exit the app!"
 
                     @input = gets.strip
                     if @input == 'next' #conditional that is used to either exit the program or get more descriptions of meals
+                        if @menu_input == 'day' #conditional statements used to call a method that displays the meals by day or by week
+                            list_meals_by_day 
+                        elsif @menu_input == 'week'
+                            list_meals_by_week
+                        end
                         ask_for_choice
                     elsif @input != 'next' && @input != 'exit'
                         puts "Didn't recognize input. Please try again"
@@ -159,6 +170,12 @@ module HealthyHungerApi
            
         end
 
+        def set_recipes
+
+            Recipes.load_recipes(@meal_id)
+
+        end
+
         def list_meals_by_day #instance method that searches through all of the meal objects that have been 
                 #created for a daily meal plan, iterates over the objects and prints out the name of the meal with its
                 #index number next to it
@@ -200,7 +217,7 @@ module HealthyHungerApi
             puts ""
             puts "Choose a meal number to see a description"
             @input = gets.strip
-
+    
         end
 
         def valid?(input) #instance method that returns as truthy or falsey based on whether the input that 
