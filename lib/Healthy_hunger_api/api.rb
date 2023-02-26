@@ -5,7 +5,6 @@ require 'json'
 
 
 module HealthyHungerApi
-
     class API #class that is accessing the api from the url
 
       def self.api_key #class method used to help hide the api key by reading it from a

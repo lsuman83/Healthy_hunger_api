@@ -1,6 +1,6 @@
 module HealthyHungerApi
 
-    class CLI #class that runs the CLI. It outputs options to the screen and receives input from a user to help access othe classes
+    class CLI  #class that runs the CLI. It outputs options to the screen and receives input from a user to help access othe classes
 
         def initialize 
 
@@ -34,11 +34,11 @@ module HealthyHungerApi
                 
             while @input != 'exit' #conditionals based on the validity of the choice returned by the ask_for_choice method
                 if valid?(@input)
-                    if @menu_input == 'day'
+                    #if @menu_input == 'day'
                         Meals.find_by_number(@input).meals_by_day #calls the instance method that displays the meals by using the class method 
-                    elsif @menu_input == 'week'                             #that is used to find the number that references the particular meal from the Meal class
-                        Meals.find_by_number(@input).meals_by_week
-                    end
+                    #elsif @menu_input == 'week' #that is used to find the number that references the particular meal from the Meal class
+                      #  Meals.find_by_number(@input).display_meals_by_week
+                    #end
 
                     puts ""
                     puts "To see the description of another meal, type 'next'"
@@ -92,7 +92,7 @@ module HealthyHungerApi
 
         def meal_calories #instance method that is getting a calorie input from user also making sure the
                             #value is within the parameters given
-            puts "What is your target Calorie intake? (400 - 3200)"
+            puts "What is your target daily Calorie intake? (400 - 3200)"
             @meal_cal = gets.strip
 
             puts ""
@@ -144,6 +144,7 @@ module HealthyHungerApi
                         #strings as values of the method
             puts "List any allergies you may have. If you enter more than one, seperate them with a comma."
             @allergy = gets.strip
+
             if @allergy.to_i != 0 #checks to make sure that the value entered is not an integer
                 puts "Please enter an allergy, not a number."
                 puts ""
@@ -162,7 +163,7 @@ module HealthyHungerApi
                 #created for a daily meal plan, iterates over the objects and prints out the name of the meal with its
                 #index number next to it
 
-            puts ""
+            puts "" 
             puts "Here are your meals for the day:"
             puts ""
 
@@ -183,11 +184,10 @@ module HealthyHungerApi
             daily_index = 0
 
             Meals.all.each.with_index(1) do |meal, index|
-                meal_name = JSON.parse(meal.value)
                 if daily_index % 3 == 0
                     puts "Day ##{meal.day}:"
                 end
-                puts "  Meal ##{meal.slot} (#{index}): #{meal_name["title"]}"
+                puts "  Meal ##{meal.slot} (#{index}): #{meal.title}"
                 daily_index += 1
             end
 
