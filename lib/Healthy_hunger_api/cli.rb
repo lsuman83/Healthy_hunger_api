@@ -36,7 +36,7 @@ module HealthyHungerApi
                 if valid?(@input)
                     #if @menu_input == 'day'
                     @meal_info = Meals.find_by_number(@input)
-                    @meal_info.meals_summary #calls the instance method that displays the meals by using the class method 
+                    #calls the instance method that displays the meals by using the class method 
                     #elsif @menu_input == 'week' #that is used to find the number that references the particular meal from the Meal class
                       #  Meals.find_by_number(@input).display_meals_by_week
                     #end
@@ -45,7 +45,7 @@ module HealthyHungerApi
                     
                     puts ""
                     print_recipe
-                    
+                    @meal_info.meals_summary 
                     puts ""
                     puts "To see the description of another meal, type 'next'"
                     puts "otherwise type 'exit' to exit the app!"
